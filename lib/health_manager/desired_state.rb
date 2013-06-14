@@ -114,7 +114,7 @@ module HealthManager
     end
 
     def host
-      (config['bulk_api'] && config['bulk_api']['host']) || "api.vcap.me"
+      (config['bulk_api'] && config['bulk_api']['host']) || "api.cf2.youdao.com"
     end
 
     def batch_size
@@ -122,11 +122,11 @@ module HealthManager
 		end
 
 		def bulk_username
-			(@config['bulk_api'] && @config['bulk_api']['auth_user']) || "bulk_user"
+			(config['bulk_api'] && config['bulk_api']['auth_user']) || "bulk_user"
 		end
 
 		def bulk_password
-			(@config['bulk_api'] && @config['bulk_api']['auth_password']) || "bulk_password"
+			(config['bulk_api'] && config['bulk_api']['auth_password']) || "bulk_password"
 		end
 
     def bulk_url

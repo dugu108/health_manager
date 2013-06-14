@@ -18,7 +18,8 @@ logging:
 # the default for the bulk_api host is http://api.vcap.me
 bulk_api:
   host: http://api.cf2.youdao.com
-  #host: http://api.cf88.dev.las01.vcsops.com
+  auth_user: bulk_user
+  auth_password: bulk_password
 
 
 # use value "disable" to stop shadowing and start using hm_next for

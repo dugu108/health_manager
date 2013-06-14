@@ -51,6 +51,8 @@ module HealthManager
     end
 
     def process_next_batch(bulk_token, &block)
+			@user = bulk_username
+			@password = bulk_password
       with_credentials do |user, password|
         options = {
           :head => { 'authorization' => [user, password] },
@@ -117,7 +119,15 @@ module HealthManager
 
     def batch_size
       (config['bulk_api'] && config['bulk_api']['batch_size']) || "500"
-    end
+		end
+
+		def bulk_username
+			(@config['bulk_api'] && @config['bulk_api']['auth_user']) || "bulk_user"
+		end
+
+		def bulk_password
+			(@config['bulk_api'] && @config['bulk_api']['auth_password']) || "bulk_password"
+		end
 
     def bulk_url
       url = "#{host}/bulk"

@@ -3,21 +3,21 @@
 # is used to choose the right ip address (think of hosts that have multiple nics
 # and IP addresses assigned to them) of the host running the Health Manager. Default
 # value of nil, should work in most cases.
-local_route: 127.0.0.1
+local_route: 10.168.3.155
 
 # NATS message bus URI, adjust as needed.
 # Can be overriden with NATS_URI env variable.
-mbus: nats://nats:nats@127.0.0.1:4222/
+mbus: nats://10.168.3.189:4222/
 
 logging:
-  level: info
+  level: debug
 
 # pid: /var/vcap/sys/run/healthmanager2.pid
 
 # set this to your dev instance api url
 # the default for the bulk_api host is http://api.vcap.me
 bulk_api:
-  #host: http://api.vcap.me
+  host: http://api.cf2.youdao.com
   #host: http://api.cf88.dev.las01.vcsops.com
 
 
@@ -95,5 +95,5 @@ intervals:
 # static values.
 status:
   port: 54321
-  user: thin
-  password: thin
+  user: varz
+  password: varz
